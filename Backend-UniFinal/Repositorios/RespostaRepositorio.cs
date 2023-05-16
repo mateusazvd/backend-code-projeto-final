@@ -46,5 +46,17 @@ namespace Backend_UniFinal.Repositorios
             return result;
         }
 
+        //Apagar resposta por Id
+        public void ApagarResposta(string id)
+        {
+             _db.resposta.DeleteOne(e => e.Id == id);
+        }
+
+        //Inserir varias respostas
+        public List<Resposta> InserirVariasRespostas(List<Resposta> respostas)
+        {
+            _db.resposta.InsertMany(respostas);
+            return respostas;
+        }
     }
 }
