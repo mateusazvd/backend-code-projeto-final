@@ -19,6 +19,9 @@ builder.Services.AddSingleton<RespostaRepositorio>();
 builder.Services.Configure<MongoDbContext>
     (builder.Configuration.GetSection("Database"));
 
+
+
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -29,6 +32,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors(x => x.AllowAnyHeader().AllowAnyOrigin().AllowAnyOrigin());
 app.UseAuthorization();
 
 app.MapControllers();
