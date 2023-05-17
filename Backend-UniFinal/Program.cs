@@ -3,7 +3,7 @@ using Backend_UniFinal.Repositorios;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// Configurações do serviço e do aplicativo
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -15,7 +15,6 @@ builder.Services.AddSingleton<MongoDbContext>();
 builder.Services.AddScoped<PesquisaRepositorio>();
 builder.Services.AddScoped<RespostaRepositorio>();
 
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -23,9 +22,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-
-
 
 app.UseHttpsRedirection();
 
