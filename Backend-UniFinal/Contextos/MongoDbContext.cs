@@ -7,9 +7,9 @@ namespace Backend_UniFinal.Contextos
     {
         private readonly IMongoDatabase _database;
 
-        public MongoDbContext(IConfiguration configuration)
+        public MongoDbContext(IConfiguration configuration) 
         {
-            var connectionString = configuration.GetConnectionString("MongoDB");
+            var connectionString = configuration.GetConnectionString("mongoDb");
             var client = new MongoClient(connectionString);
             _database = client.GetDatabase("Desenvolvimento");
         }
