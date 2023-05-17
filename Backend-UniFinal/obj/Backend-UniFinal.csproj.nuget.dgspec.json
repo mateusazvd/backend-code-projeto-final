@@ -45,9 +45,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNetCore.HttpsPolicy": {
+            "MongoDB.Bson": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.19.1, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
@@ -55,7 +55,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[6.2.3, )"
             }
           },
           "imports": [
