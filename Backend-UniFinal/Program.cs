@@ -9,11 +9,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //Contexto do Mongodb
-builder.Services.AddSingleton<MongoDbContext>();
+//builder.Services.AddSingleton<MongoDbContext>();
 
 //Dependencias do repositorio
 builder.Services.AddScoped<PesquisaRepositorio>();
 builder.Services.AddScoped<RespostaRepositorio>();
+
+//mikael
+builder.Services.Configure<MongoDbContext>
+    (builder.Configuration.GetSection("Database"));
 
 var app = builder.Build();
 

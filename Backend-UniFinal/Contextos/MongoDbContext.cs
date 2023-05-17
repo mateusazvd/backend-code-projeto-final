@@ -5,17 +5,13 @@ namespace Backend_UniFinal.Contextos
 {
     public class MongoDbContext
     {
-        private readonly IMongoDatabase _database;
+        public string ConnectionString { get; set; }
 
-        public MongoDbContext(IConfiguration configuration) 
-        {
-            var connectionString = configuration.GetConnectionString("mongoDb");
-            var client = new MongoClient(connectionString);
-            _database = client.GetDatabase("Desenvolvimento");
-        }
+        public string Database { get; set; }
 
-        public IMongoCollection<Pesquisa> pesquisa => _database.GetCollection<Pesquisa>("Pesquisas");
-        public IMongoCollection<Resposta> resposta => _database.GetCollection<Resposta>("Respostas");
+        public string PesquisaCollection { get; set; }
+        public string RespostaCollection { get; set; }
+
 
     }
 }
