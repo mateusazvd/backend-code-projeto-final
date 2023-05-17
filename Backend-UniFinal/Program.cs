@@ -12,8 +12,8 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddSingleton<MongoDbContext>();
 
 //Dependencias do repositorio
-builder.Services.AddScoped<PesquisaRepositorio>();
-builder.Services.AddScoped<RespostaRepositorio>();
+builder.Services.AddSingleton<PesquisaRepositorio>();
+builder.Services.AddSingleton<RespostaRepositorio>();
 
 //mikael
 builder.Services.Configure<MongoDbContext>
